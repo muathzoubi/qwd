@@ -37,7 +37,6 @@ export default function RootLayout({
             <Home className="w-6 h-6" />
             <span className="text-xs">الصفحة الرئيسية</span>
           </button>
-        <ChatBanner/>
         </div>
       </nav></body>
     </html>

@@ -30,7 +30,7 @@ export function DatePickerDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-[400px] h-full overflow-auto">
         <DialogHeader className="flex flex-row items-center justify-between">
           <div className="flex items-center gap-2">
             <DialogTitle className="text-right">اختر تاريخ المغادرة</DialogTitle>
