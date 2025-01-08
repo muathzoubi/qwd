@@ -1,3 +1,5 @@
+"use client"
+
 import Image from 'next/image';
 import {
   Calendar,
@@ -12,8 +14,13 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { useState } from 'react';
+import { DatePickerDialog } from '@/components/date-dialog';
 
 export default function Page() {
+  const [openDat,setOpenDate]=useState(false)
+  const [date, setDate] = useState<Date>()
+
   return (
     <div className="h-screen mobileBG font-sans" dir="rtl">
       {/* Top Navigation */}
@@ -38,7 +45,7 @@ export default function Page() {
       <div className="px-4 flex justify-center gap-4 mb-6">
         {['أرويا', 'رويال كاريبيان', 'إن سي ال'].map((name, i) => (
           <div key={name} className="text-center">
-            <div className="w-20 h-20 rounded-full overflow-hidden mb-2">
+            <div className="w-16 h-16 rounded-full overflow-hidden mb-2">
               <img
                 src={`/${i + 1}.png`}
                 alt={name}
@@ -54,7 +61,7 @@ export default function Page() {
 
       {/* Main Content */}
       <main className="px-8">
-        <div className="bg-gradient-to-b from-cyan-500 to-blue-900 rounded-3xl p-6 text-white ">
+        <div className="bg-gradient-to-b from-cyan-500 to-blue-900 rounded-3xl p-4 text-white ">
           <div className="flex items-center gap-2 mb-2 ">
             <Image
               src="/vercel.svg"
@@ -83,10 +90,19 @@ export default function Page() {
             <Button
               variant="secondary"
               className="h-10 text-right justify-between"
+                        onClick={() => setOpenDate(true)}
             >
+
+
               <span>التواريخ</span>
               <Calendar className="w-5 h-5" />
             </Button>
+            <DatePickerDialog
+        open={openDat   }
+        onOpenChange={setOpenDate}
+        selectedDate={date}
+        onSelect={setDate}
+      />
             <Button
               variant="secondary"
               className="h-10 text-right justify-between"
@@ -106,10 +122,10 @@ export default function Page() {
       </main>
 
       {/* Service Icons */}
-      <div className="py-8 px-4 mb-20 grid grid-cols-4 gap-4">
+      <div className="py-2 px-4 mb-20 grid grid-cols-4 gap-4">
         <Button
           variant="secondary"
-          className="flex flex-col items-center gap-2 h-auto py-4 bg-[#03156c]"
+          className="flex flex-col items-center gap-2 h-auto py-4 bg-gradient-to-b from-cyan-500 to-blue-900 "
         >
           <img className="w-full" src="/vercel.svg" alt="" />
         </Button>
@@ -131,32 +147,12 @@ export default function Page() {
           variant="secondary"
           className="flex flex-col items-center gap-2 h-auto py-4"
         >
-          <Ship className="w-6 h-6" />
-          <span>كروز</span>
+          <Plane className="w-6 h-6" />
+          <span>طيران</span>
         </Button>
       </div>
 
-      {/* Bottom Navigation */}
-      <nav className="fixed bottom-0 left-0 right-0 bg-[#001838] text-white p-4">
-        <div className="flex justify-between items-center max-w-md mx-auto">
-          <button className="flex flex-col items-center gap-1">
-            <User className="w-6 h-6" />
-            <span className="text-xs">لوحة التحكم</span>
-          </button>
-          <button className="flex flex-col items-center gap-1">
-            <Briefcase className="w-6 h-6" />
-            <span className="text-xs">حجوزاتي</span>
-          </button>
-          <button className="flex flex-col items-center gap-1">
-            <Tag className="w-6 h-6" />
-            <span className="text-xs">العروض</span>
-          </button>
-          <button className="flex flex-col items-center gap-1 text-sky-400">
-            <Home className="w-6 h-6" />
-            <span className="text-xs">الصفحة الرئيسية</span>
-          </button>
-        </div>
-      </nav>
+    
     </div>
   );
 }
