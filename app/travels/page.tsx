@@ -41,7 +41,6 @@ export default function TravelBooking() {
         </div>
       </nav>
 
-      <main className="max-w-7xl mx-auto px-4 py-8">
         {/* Search Form */}
         <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
           <form className="grid md:grid-cols-[1fr_1fr_auto_auto] gap-4">
@@ -246,7 +245,6 @@ export default function TravelBooking() {
             </div>
           </Card>
         </section>
-      </main>
     </div>
   )
 }
