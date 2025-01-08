@@ -1,5 +1,6 @@
 import { Briefcase, Home, Tag, User } from 'lucide-react';
 import './globals.css';
+import { ChatBanner } from '@/components/chat';
 
 export const metadata = {
   title: 'Aroya Cruises',
@@ -13,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ar" dir="rtl">
-      <body className="mobileBG overflow-hidden" style={{zoom:0.7}}>
+      <body className="mobileBG overflow-auto" style={{zoom:0.7}}>
       <main>
       {children}
       </main>
@@ -36,6 +37,7 @@ export default function RootLayout({
             <Home className="w-6 h-6" />
             <span className="text-xs">الصفحة الرئيسية</span>
           </button>
+        <ChatBanner/>
         </div>
       </nav></body>
     </html>
