@@ -37,7 +37,7 @@ const routes = [
   }
 ]
 
-export default function RoutesPage({ open,
+export default function DirDialog({ open,
     onOpenChange}:any) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
