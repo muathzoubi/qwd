@@ -6,7 +6,7 @@ export function UserHeader() {
       <div className="flex justify-between items-start mb-6">
         <div>
           <h1 className="text-2xl font-bold mb-2">لوحة التحكم</h1>
-          <p className="text-lg">مرحباً بك مرة أخرى، Mohd ASls</p>
+          <p className="text-lg">مرحباً بك مرة أخرى</p>
         </div>
         <button className="text-white">
           <UserCircle className="w-8 h-8" />
