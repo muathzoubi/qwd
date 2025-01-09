@@ -19,8 +19,8 @@ import { DatePickerDialog } from '@/components/date-dialog';
 import DirDialog from '@/components/diractioin';
 
 export default function Page() {
-  const [openDat,setOpenDate]=useState(false)
-  const [openDir,setOpeir]=useState(false)
+  const [openDat, setOpenDate] = useState(false)
+  const [openDir, setOpeir] = useState(false)
   const [date, setDate] = useState<Date>()
 
   return (
@@ -92,7 +92,7 @@ export default function Page() {
             <Button
               variant="secondary"
               className="h-10 text-right justify-between"
-                        onClick={() => setOpenDate(true)}
+              onClick={() => setOpenDate(true)}
             >
 
 
@@ -100,15 +100,15 @@ export default function Page() {
               <Calendar className="w-5 h-5" />
             </Button>
             <DatePickerDialog
-        open={openDat   }
-        onOpenChange={setOpenDate}
-        selectedDate={date}
-        onSelect={setDate}
-      />
+              open={openDat}
+              onOpenChange={setOpenDate}
+              selectedDate={date}
+              onSelect={setDate}
+            />
             <Button
               variant="secondary"
               className="h-10 text-right justify-between"
-              onClick={()=>{                                                                                                  (true)}}            >
+              onClick={() => {setOpeir(true) }}            >
               <span>مسار الرحلة</span>
               <MapPin className="w-5 h-5" />
             </Button>
@@ -154,7 +154,7 @@ export default function Page() {
         </Button>
       </div>
 
-    <DirDialog onOpenChange={setOpeir } open={openDir}/>
+      <DirDialog onOpenChange={setOpeir} open={openDir} />
     </div>
   );
 }

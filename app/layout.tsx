@@ -26,11 +26,13 @@ export default function RootLayout({
             <User className="w-6 h-6" />
             <span className="text-xs">لوحة التحكم</span>
           </button>
+          <Link href={'/travels'}>
           <button className="flex flex-col items-center gap-1">
             <Briefcase className="w-6 h-6" />
             <span className="text-xs">حجوزاتي</span>
           </button>
-          <Link href="/travels">
+          </Link>
+          <Link href="/offers">
           <button className="flex flex-col items-center gap-1">
             <Tag className="w-6 h-6" />
             <span className="text-xs">العروض</span>

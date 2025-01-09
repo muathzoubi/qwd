@@ -167,7 +167,7 @@ export default function TravelBooking() {
                   />
                 </div>
               </CardHeader>
-              <CardContent className="p-4  bg-gray-50 rounded z-10">
+              <CardContent className="p-4  bg-gray-50 rounded z-10 ">
                 <h3 className="font-semibold">{ i.city}</h3>
                 <p className="text-sm text-gray-600">{i.country }</p>
                 <p className="text-sm text-gray-600">{i.start}</p>
@@ -176,6 +176,14 @@ export default function TravelBooking() {
                   <p className="text-sm font-bold text-gray-600">{i.pricefor }  </p>
                   <p className="text-sm text-green-600  font-bold">  {`${i.price} ريال`}</p>
                 </div>
+                <p className="text-sm text-gray-600">{`عدد الزوار  ${i.visitors}`}</p>
+                <p className="text-sm text-gray-600">{`عدد الزوار  ${i.visitors}`}</p>
+                <p className="text-sm text-gray-600">{`عدد الزوار  ${i.visitors}`}</p>
+                
+<div className='flex justify-end mt-3'>
+<Button className='mt-2 '>+ أضف</Button>
+
+</div>
               </CardContent>
               </Card>
             </Link>
