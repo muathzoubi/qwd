@@ -1,6 +1,7 @@
 import { Briefcase, Home, Tag, User } from 'lucide-react';
 import './globals.css';
 import { ChatBanner } from '@/components/chat';
+import Link from 'next/link';
 
 export const metadata = {
   title: 'Aroya Cruises',
@@ -29,11 +30,13 @@ export default function RootLayout({
             <Briefcase className="w-6 h-6" />
             <span className="text-xs">حجوزاتي</span>
           </button>
+          <Link href="/travels">
           <button className="flex flex-col items-center gap-1">
             <Tag className="w-6 h-6" />
             <span className="text-xs">العروض</span>
           </button>
-          <button className="flex flex-col items-center gap-1 text-sky-400">
+          </Link>
+          <button className="flex flex-col items-center gap-1 ">
             <Home className="w-6 h-6" />
             <span className="text-xs">الصفحة الرئيسية</span>
           </button>
