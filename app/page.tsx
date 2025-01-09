@@ -16,9 +16,11 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useState } from 'react';
 import { DatePickerDialog } from '@/components/date-dialog';
+import DirDialog from '@/components/diractioin';
 
 export default function Page() {
   const [openDat,setOpenDate]=useState(false)
+  const [openDir,setOpeir]=useState(false)
   const [date, setDate] = useState<Date>()
 
   return (
@@ -106,7 +108,7 @@ export default function Page() {
             <Button
               variant="secondary"
               className="h-10 text-right justify-between"
-            >
+              onClick={()=>{setOpeir(true)}}            >
               <span>مسار الرحلة</span>
               <MapPin className="w-5 h-5" />
             </Button>
@@ -152,7 +154,7 @@ export default function Page() {
         </Button>
       </div>
 
-    
+    <DirDialog onOpenChange={setOpeir } open={openDir}/>
     </div>
   );
 }

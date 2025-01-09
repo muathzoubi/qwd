@@ -2,7 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronLeft } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Dialog } from './ui/dialog'
+import { Dialog, DialogHeader, DialogTitle } from './ui/dialog'
+import { DialogContent } from '@radix-ui/react-dialog'
 
 const routes = [
   {
@@ -41,22 +42,11 @@ export default function DirDialog({ open,
     onOpenChange}:any) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-
-      {/* Header */}
-      <header className="sticky top-0 z-10 bg-white border-b">
-        <div className="flex items-center justify-between p-4">
-          <h1 className="text-xl font-bold">مسار الرحلة</h1>
-          <Button variant="ghost" size="icon" asChild>
-            <Link href="/">
-              <ChevronLeft className="w-6 h-6" />
-              <span className="sr-only">رجوع</span>
-            </Link>
-          </Button>
-        </div>
-      </header>
-
+<DialogContent>
+<DialogHeader className="flex flex-row items-center justify-between">
+            <DialogTitle className="text-right">اختر تاريخ المغادرة</DialogTitle>
+              </DialogHeader>
       {/* Routes List */}
-      <main className="p-4 space-y-4">
         {routes.map((route) => (
           <Link
             key={route.id}
@@ -78,7 +68,7 @@ export default function DirDialog({ open,
             </div>
           </Link>
         ))}
-      </main>
+  </DialogContent>
     </Dialog>
   )
 }

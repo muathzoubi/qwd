@@ -14,8 +14,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ar" dir="rtl">
-      <body className="mobileBG overflow-auto" style={{zoom:0.7}}>
-      <main className='max-w-7xl mx-auto px-4 py-8'>
+      <body className=" overflow-auto" style={{zoom:0.8}}>
+      <main className=''>
       {children}
       </main>
         {/* Bottom Navigation */}
