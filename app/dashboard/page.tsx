@@ -6,7 +6,7 @@ export default function RoutesPage() {
   return (
     <>
       {/* Cruise Type Selection */}
-      <div className="px-4 flex justify-center gap-4 mb-6">
+      <div className="flex flex-col justify-center gap-4 mb-6">
       <UserHeader />
       <StatsCards />
       <MenuItems />
