@@ -127,7 +127,6 @@ export default function TravelBooking() {
                   <img
                     src="/syd.png"
                     alt="سيدني"
-                    fill
                     className="object-cover group-hover:scale-105 transition-transform"
                   />
                 </div>
