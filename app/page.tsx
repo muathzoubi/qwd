@@ -94,8 +94,6 @@ export default function Page() {
               className="h-10 text-right justify-between"
               onClick={() => setOpenDate(true)}
             >
-
-
               <span>التواريخ</span>
               <Calendar className="w-5 h-5" />
             </Button>
