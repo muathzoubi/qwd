@@ -108,7 +108,7 @@ export default function Page() {
             <Button
               variant="secondary"
               className="h-10 text-right justify-between"
-              onClick={()=>{setOpeir(true)}}            >
+              onClick={()=>{                                                                                                  (true)}}            >
               <span>مسار الرحلة</span>
               <MapPin className="w-5 h-5" />
             </Button>

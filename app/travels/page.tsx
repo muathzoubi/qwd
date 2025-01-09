@@ -79,10 +79,9 @@ export default function TravelBooking() {
             <Link href="#" className="group">
               <Card className="overflow-hidden">
                 <div className="relative h-48">
-                  <Image
-                    src="/placeholder.svg"
+                  <img
+                    src="/dubi.png"
                     alt="دبي"
-                    fill
                     className="object-cover group-hover:scale-105 transition-transform"
                   />
                 </div>
@@ -95,10 +94,9 @@ export default function TravelBooking() {
             <Link href="#" className="group">
               <Card className="overflow-hidden">
                 <div className="relative h-48">
-                  <Image
-                    src="/placeholder.svg"
+                  <img
+                    src="/san.png"
                     alt="سان دييغو"
-                    fill
                     className="object-cover group-hover:scale-105 transition-transform"
                   />
                 </div>
@@ -111,10 +109,9 @@ export default function TravelBooking() {
             <Link href="#" className="group">
               <Card className="overflow-hidden">
                 <div className="relative h-48">
-                  <Image
-                    src="/placeholder.svg"
+                  <img
+                    src="/kaw.svg"
                     alt="كاواي"
-                    fill
                     className="object-cover group-hover:scale-105 transition-transform"
                   />
                 </div>
@@ -127,8 +124,8 @@ export default function TravelBooking() {
             <Link href="#" className="group">
               <Card className="overflow-hidden">
                 <div className="relative h-48">
-                  <Image
-                    src="/placeholder.svg"
+                  <img
+                    src="/syd.png"
                     alt="سيدني"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform"
