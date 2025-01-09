@@ -22,10 +22,14 @@ export default function RootLayout({
         {/* Bottom Navigation */}
         <nav className="fixed bottom-0 left-0 right-0 bg-[#001838] text-white p-4">
           <div className="flex justify-between items-center max-w-md mx-auto">
+          <Link href={'/dashboard'}>
+           
             <button className="flex flex-col items-center gap-1">
               <User className="w-6 h-6" />
               <span className="text-xs">لوحة التحكم</span>
             </button>
+            </Link>
+
             <Link href={'/travels'}>
               <button className="flex flex-col items-center gap-1">
                 <Briefcase className="w-6 h-6" />
