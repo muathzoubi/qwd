@@ -18,6 +18,7 @@ export default function AppDownload() {
               <span className="text-xs">تحميل من</span>
               <span className="text-lg">متجر التطبيقات</span>
             </span>
+            <img className="mx-4" src='/appstore.png' alt="appstore" width={40}/>
           </Button>
           <Button 
             variant="secondary" 
@@ -25,11 +26,15 @@ export default function AppDownload() {
           >
             <span className="flex flex-col items-end">
               <span className="text-xs">احصل عليه من</span>
+              
               <span className="text-lg">متجر جوجل بلاي</span>
             </span>
+            <img className="mx-4" src='/pngegg.png' alt="appstore" width={40}/>
+
           </Button>
         </div>
       </div>
+      <img src='/arabic-AppImage.png' alt='app-download' className='w-full'/>
     </section>
   )
 }
