@@ -32,7 +32,7 @@ export default function RootLayout({
             <span className="text-xs">حجوزاتي</span>
           </button>
           </Link>
-          <Link href="/offers">
+          <Link href="/offres">
           <button className="flex flex-col items-center gap-1">
             <Tag className="w-6 h-6" />
             <span className="text-xs">العروض</span>
