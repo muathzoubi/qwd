@@ -11,7 +11,22 @@ import { useBooking } from './contexts/booking-context'
 import { getCrbyCode } from '@/app/actions/get-carancy'
 
 export  function PassengerForm({onComplete}:any) {
-  const [agreed, setAgreed] = useState(false)
+  const [agreed, setAgreed] = useState(false) 
+   const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: ''
+  })
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }))
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    onSubmit(formData)
+  }
+
   const {bookingData} =  useBooking()
 useEffect(()=>{
   console.log(bookingData)
@@ -79,7 +94,7 @@ useEffect(()=>{
       <div className="max-w-2xl mx-auto p-4 mb-16">
         <Card>
           <CardContent className="p-6">
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               {/* Personal Information */}
               <div className="space-y-4">
                 <div>
