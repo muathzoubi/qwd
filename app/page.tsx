@@ -91,7 +91,7 @@ export default function Page() {
           <div className="grid grid-cols-2 gap-4 mb-4">
             <Button
               variant="secondary"
-              className="h-10 text-right justify-between"
+              className="h-12 text-right justify-between"
               onClick={() => setOpenDate(true)}
             >
               <span>التواريخ</span>
@@ -105,19 +105,21 @@ export default function Page() {
             />
             <Button
               variant="secondary"
-              className="h-10 text-right justify-between"
+              className="h-12 text-right justify-between"
               onClick={() => {setOpeir(true) }}            >
               <span>مسار الرحلة</span>
               <MapPin className="w-5 h-5" />
             </Button>
+      <DirDialog onOpenChange={setOpeir} open={openDir} />
+
           </div>
 
           {/* Search Bar */}
-          <Input
-            type="search"
-            placeholder="بحث"
-            className="bg-white h-10 text-right"
-          />
+          <Button
+              variant="secondary"
+              className="h-12 text-right justify-between w-full">
+              بحث
+            </Button>
         </div>
       </main>
 
@@ -152,7 +154,6 @@ export default function Page() {
         </Button>
       </div>
 
-      <DirDialog onOpenChange={setOpeir} open={openDir} />
     </div>
   );
 }

@@ -63,7 +63,6 @@
 .mobileBG {
   height: 140vh;
   width: 100% !important;
-  z-index: -1!important;
   position: relative !important;
   min-height: 100vh !important;
   background: url(/mainbg.png) !important;

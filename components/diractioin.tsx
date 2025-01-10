@@ -2,8 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronLeft } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Dialog, DialogHeader, DialogTitle } from './ui/dialog'
-import { DialogContent } from '@radix-ui/react-dialog'
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from './ui/dialog'
 
 const routes = [
   {
@@ -48,10 +47,10 @@ export default function DirDialog({ open,
               </DialogHeader>
       {/* Routes List */}
         {routes.map((route) => (
-          <Link
+          <Button
             key={route.id}
-            href={route.href}
-            className="block group relative h-48 rounded-lg overflow-hidden"
+            className="block group relative h-24 rounded-lg overflow-hidden"
+            onClick={()=>onOpenChange(false)}
           >
             <Image
               src={route.image}
@@ -66,7 +65,7 @@ export default function DirDialog({ open,
                 {route.title}
               </h2>
             </div>
-          </Link>
+          </Button>
         ))}
   </DialogContent>
     </Dialog>

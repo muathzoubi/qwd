@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ar" dir="rtl">
-      <body className=" overflow-auto" style={{ zoom: 0.8 }}>
+      <body className=" " style={{ zoom: 0.7 }}>
         <main className=''>
           {children}
         </main>
