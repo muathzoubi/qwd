@@ -9,6 +9,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Calendar, Ship } from 'lucide-react'
 import { useBooking } from './contexts/booking-context'
 import { cruiseData3 } from '@/app/all'
+import { getCrbyCode } from '@/app/actions/get-carancy'
 
 export  function PassengerForm({onComplete}:any) {
   const [agreed, setAgreed] = useState(false)
@@ -43,23 +44,25 @@ useEffect(()=>{
           <div className="space-y-2 text-sm">
             <div className="flex justify-between">
               <span className="text-gray-600">رسوم الكابينة</span>
-              <span>{localStorage.price}</span>
+              <span>{getCrbyCode(localStorage.getItem('country')!,localStorage.price)}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-gray-600">رسوم الميناء</span>
-              <span>ر.س. 303</span>
+              <span>{getCrbyCode(localStorage.getItem('country')!,'303')}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-gray-600">رسوم الخدمة</span>
-              <span>ر.س. 103</span>
+              <span>{getCrbyCode(localStorage.getItem('country')!,'103')}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-gray-600">رسوم ضريبة القيمة المضافة</span>
-              <span>ر.س. 409</span>
+              <span>{getCrbyCode(localStorage.getItem('country')!,'403')}</span>
             </div>
             <div className="flex justify-between font-bold pt-2 border-t">
               <span>المبلغ الإجمالي</span>
-              <span>ر.س.{parseInt(localStorage.price) + 815}</span>
+              <span>
+              {getCrbyCode(localStorage.getItem('country')!,(parseInt(localStorage.price) + 815))}
+              </span>
             </div>
           </div>
 

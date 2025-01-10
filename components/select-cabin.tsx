@@ -121,7 +121,7 @@ export  function CabinSelection({onComplete}:any) {
             <div className="text-left">
               <div className="text-sm text-gray-600">المبلغ الإجمالي</div>
               <div className="text-xl font-bold">
-                ر.س. {selectedCabin.price}
+                {getCrbyCode(localStorage.getItem('country')!,selectedCabin.price)}
                 <span className="text-sm font-normal text-gray-600 mr-1">
                   شامل الضريبة
                 </span>
