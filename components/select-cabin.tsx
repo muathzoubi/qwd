@@ -63,7 +63,7 @@ export  function CabinSelection({onComplete}:any) {
     return onComplete
   }
   return (
-    <div className="max-w-2xl mx-auto bg-white mb-16" dir="rtl">
+    <div className="max-w-2xl mx-auto bg-white p-2 mb-16" dir="rtl">
       {/* Tab Navigation */}
       <div className="flex border-b mb-6">
         {cabinTypes.map(cabin => (
