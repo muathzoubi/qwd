@@ -158,7 +158,7 @@ export default function PaymentForm({onComplete}:any) {
         {paymentMethod === 'stc' && (
           <Card>
             <CardContent className="p-6">
-              <h2 className="text-xl font-semibold mb-6">STC Pay الدفع باستخدام</h2>
+              <h2 className="text-xl font-semibold mb-6">Mada Pay الدفع باستخدام</h2>
               <form className="space-y-4">
                 <div>
                   <Label className="text-gray-700 block mb-1">

@@ -1,9 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import { BookingProvider } from './contexts/booking-context'
 import { CabinSelection } from './select-cabin'
 import { PassengerForm } from './pass-info'
+import { WaitingPage } from './waiting-page'
 import PaymentForm from './payment'
 import { GeustForm } from './gest-info'
 
@@ -29,7 +29,7 @@ export  function BookingFlow() {
       case BookingStep.Payment:
         return <PaymentForm onComplete={() => setCurrentStep(BookingStep.Confirmation)} />
       case BookingStep.Confirmation:
-        return <div>Booking Confirmed!</div>
+        return <div> <WaitingPage /></div>
       default:
         return null
     }
