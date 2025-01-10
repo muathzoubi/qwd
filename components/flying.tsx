@@ -27,6 +27,7 @@ export default function LocationFinder() {
           )
           const data = await response.json()
           setLocation(data.display_name)
+          localStorage.setItem("country",data.address.country_code)
         } catch (err) {
           setError('Failed to get location name')
         } finally {

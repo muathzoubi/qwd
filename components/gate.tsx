@@ -5,6 +5,7 @@ import CruiseItineraryDialog from '@/components/timline'
 import { JSXElementConstructor, Key, PromiseLikeOfReactNode, ReactElement, ReactNode, ReactPortal, useState } from 'react'
 import Link from 'next/link'
 import { BookingProvider, useBooking } from './contexts/booking-context'
+import { getCrbyCode } from '@/app/actions/get-carancy'
 
 
 export default function GateBooking({cruiseData}:any) {
@@ -56,7 +57,7 @@ export default function GateBooking({cruiseData}:any) {
                 <span>{cruise.arrival}</span>
               </div>
               <div className="flex justify-between items-center mb-4">
-                <span className="text-blue-500">يبدأ من {cruise.price} ر.س</span>
+                <span className="text-blue-500">يبدأ من {getCrbyCode(localStorage.getItem('country')!,cruise.price as string )}</span>
                 <span className="text-gray-500">(للضيف الواحد (شامل الضريبة</span>
               </div>
               <div className="flex justify-between items-center">
