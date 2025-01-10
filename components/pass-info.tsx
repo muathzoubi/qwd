@@ -1,15 +1,22 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent } from "@/components/ui/card"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Calendar, Ship } from 'lucide-react'
+import { useBooking } from './contexts/booking-context'
+import { cruiseData3 } from '@/app/all'
 
-export  function PassengerForm({setStep}:any) {
+export  function PassengerForm({onComplete}:any) {
   const [agreed, setAgreed] = useState(false)
+  const {bookingData} =  useBooking()
+useEffect(()=>{
+  console.log(bookingData)
+},[])
+
 
   return (
     <div className="min-h-screen bg-gray-50" dir="rtl">
@@ -18,25 +25,25 @@ export  function PassengerForm({setStep}:any) {
             <h3 className="font-semibold">ملخص الحجز</h3>
             <span className="text-gray-600">
               <Calendar className="h-5 w-5 inline-block ml-2" />
-              30 يناير, 2025 - 2 فبراير, 2025
+              - 
             </span>
           </div>
           
           <div className="flex items-center gap-2 mb-4">
             <div className="flex items-center gap-1">
               <Calendar className="h-4 w-4" />
-              <span>3 ليالي</span>
+              <span> {localStorage.arrival}  </span>
             </div>
             <div className="flex items-center gap-1">
               <Ship className="h-4 w-4" />
-              <span>كبينة داخلية</span>
+              <span>{localStorage.departure} </span>
             </div>
           </div>
 
           <div className="space-y-2 text-sm">
             <div className="flex justify-between">
               <span className="text-gray-600">رسوم الكابينة</span>
-              <span>ر.س. 2317</span>
+              <span>{localStorage.price}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-gray-600">رسوم الميناء</span>
@@ -52,7 +59,7 @@ export  function PassengerForm({setStep}:any) {
             </div>
             <div className="flex justify-between font-bold pt-2 border-t">
               <span>المبلغ الإجمالي</span>
-              <span>ر.س. 3132</span>
+              <span>ر.س.{parseInt(localStorage.price) + 815}</span>
             </div>
           </div>
 
@@ -205,7 +212,7 @@ export  function PassengerForm({setStep}:any) {
                 </Button>
                 <Button 
                   type="button"
-                  onClick={()=>setStep(4)}
+                  onClick={onComplete}
                   variant="outline"
                   className="w-full border-blue-600 text-blue-600 hover:bg-blue-50"
                 >

@@ -4,11 +4,13 @@ import CruiseItineraryDialog from '@/components/timline'
 import { useEffect, useState } from 'react'
 import GateBooking from '@/components/gate'
 import { cruiseData, cruiseData4 } from '../all'
+import { BookingProvider } from '@/components/contexts/booking-context'
 
 
 export default function CruiseBooking() {
   const [openTimeline,setOpenTimlein]=useState(false)
   return (
+    <BookingProvider>
     <div className="font-sans text-right mb-16" dir="rtl">
       <header className="flex justify-between items-center p-4 bg-white">
         <button className="text-blue-500">
@@ -40,7 +42,9 @@ export default function CruiseBooking() {
         <GateBooking cruiseData={cruiseData4}/>
       </div>
       <CruiseItineraryDialog open={openTimeline} onOpenChange={setOpenTimlein} />
-    </div>
+      </div>
+
+    </BookingProvider>
   )
 }
 

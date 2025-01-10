@@ -17,6 +17,7 @@ import { Input } from '@/components/ui/input';
 import { useState } from 'react';
 import { DatePickerDialog } from '@/components/date-dialog';
 import DirDialog from '@/components/diractioin';
+import LocationFinder from '@/components/flying';
 
 export default function Page() {
   const [openDat, setOpenDate] = useState(false)
@@ -153,7 +154,7 @@ export default function Page() {
           <span>طيران</span>
         </Button>
       </div>
-
+<LocationFinder/>
     </div>
   );
 }

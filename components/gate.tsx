@@ -4,11 +4,14 @@ import { CalendarIcon, InfoIcon, MapIcon } from 'lucide-react'
 import CruiseItineraryDialog from '@/components/timline'
 import { JSXElementConstructor, Key, PromiseLikeOfReactNode, ReactElement, ReactNode, ReactPortal, useState } from 'react'
 import Link from 'next/link'
+import { BookingProvider, useBooking } from './contexts/booking-context'
 
 
 export default function GateBooking({cruiseData}:any) {
   const [openTimeline,setOpenTimlein]=useState(false)
+  const {updateBookingData}=useBooking()
   return (
+    <>
     <div className="font-sans text-right mb-16" dir="rtl">
   
     
@@ -58,7 +61,13 @@ export default function GateBooking({cruiseData}:any) {
               </div>
               <div className="flex justify-between items-center">
                 <Link href={'/book'}>
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-lg">
+                <button onClick={()=>{
+               localStorage.setItem('departure',cruise.departure! as any)
+               localStorage.setItem('arrival',cruise.arrival! as any)
+               localStorage.setItem('price',cruise.price! as any)
+               localStorage.setItem('title',cruiseData[0].title!)
+                }}
+                className="bg-blue-500 text-white px-4 py-2 rounded-lg">
                   احجز رحلة بحرية &lt;&lt;
                 </button>
                 </Link>
@@ -71,8 +80,9 @@ export default function GateBooking({cruiseData}:any) {
           </button>
         </div>
       <CruiseItineraryDialog open={openTimeline} onOpenChange={setOpenTimlein} />
-
       </div>
+
+      </>
   )
 }
 

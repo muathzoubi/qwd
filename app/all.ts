@@ -53,6 +53,12 @@ export const cruiseData3 = [
       price: 1800,
     },
     {
+        id: 0,
+        departure: '2025 خميس, 16 يناير',
+        arrival: '2025 أحد, 19 يناير',
+        price: 1800,
+      },
+    {
       id: 2,
       departure: '2025 خميس, 23 يناير',
       arrival: '2025 أحد, 26 يناير',

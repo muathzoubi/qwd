@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Check } from 'lucide-react'
 import { Button } from "@/components/ui/button"
+import { useBooking } from './contexts/booking-context'
 
 interface CabinType {
   id: string
@@ -49,11 +50,18 @@ const cabinTypes: CabinType[] = [
   }
 ]
 
-export  function CabinSelection({setStep}:any) {
+export  function CabinSelection({onComplete}:any) {
   const [selectedType, setSelectedType] = useState('interior')
+  const { bookingData, updateBookingData } = useBooking()
 
   const selectedCabin = cabinTypes.find(cabin => cabin.id === selectedType)
-
+  const handleCabinSelect = (selectedType:string) => {
+  setSelectedType(selectedType)
+    
+    updateBookingData({ cabinType: selectedType })
+    // Here you would typically navigate to the next step
+    return onComplete
+  }
   return (
     <div className="max-w-2xl mx-auto bg-white p-4" dir="rtl">
       {/* Tab Navigation */}
@@ -66,7 +74,7 @@ export  function CabinSelection({setStep}:any) {
                 ? 'text-blue-600 border-b-2 border-blue-600'
                 : 'text-gray-600'
             }`}
-            onClick={() => setSelectedType(cabin.id)}
+            onClick={() => handleCabinSelect(cabin.id)}
           >
             {cabin.name}
           </button>
@@ -103,7 +111,7 @@ export  function CabinSelection({setStep}:any) {
           <div className="flex items-center justify-between">
             <Button 
               className="bg-blue-600 hover:bg-blue-700 text-white px-8"
-              onClick={()=>setStep(3)}
+              onClick={onComplete}
             >
               اختار
             </Button>

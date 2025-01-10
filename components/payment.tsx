@@ -11,7 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 
 type PaymentMethod = 'card' | 'stc'
 
-export default function PaymentForm() {
+export default function PaymentForm({onComplete}:any) {
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>('card')
 
   return (
@@ -145,6 +145,7 @@ export default function PaymentForm() {
                 <Button 
                   type="submit"
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white mt-6"
+                  onClick={onComplete}
                 >
                   إتمام الدفع
                 </Button>
