@@ -23,7 +23,7 @@ export  function BookingFlow() {
         case BookingStep.GuestInfo:
             return <GeustForm  onComplete={() => setCurrentStep(BookingStep.CabinSelection)} />
       case BookingStep.CabinSelection:
-        return <CabinSelection  onComplete={() => setCurrentStep(BookingStep.PassengerInfo)} />
+        return <CabinSelection  onComplete={setCurrentStep} />
       case BookingStep.PassengerInfo:
         return <PassengerForm onComplete={() => setCurrentStep(BookingStep.Payment)} />
       case BookingStep.Payment:

@@ -64,7 +64,6 @@ export default function GateBooking({cruiseData}:any) {
                 <button onClick={()=>{
                localStorage.setItem('departure',cruise.departure! as any)
                localStorage.setItem('arrival',cruise.arrival! as any)
-               localStorage.setItem('price',cruise.price! as any)
                localStorage.setItem('title',cruiseData[0].title!)
                 }}
                 className="bg-blue-500 text-white px-4 py-2 rounded-lg">

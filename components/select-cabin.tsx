@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Check } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { useBooking } from './contexts/booking-context'
@@ -111,7 +111,10 @@ export  function CabinSelection({onComplete}:any) {
           <div className="flex items-center justify-between">
             <Button 
               className="bg-blue-600 hover:bg-blue-700 text-white px-8"
-              onClick={onComplete}
+              onClick={()=>{
+                localStorage.setItem('price',selectedCabin.price! as any)
+                onComplete(2)
+              }}
             >
               اختار
             </Button>
