@@ -18,6 +18,7 @@ import { useState } from 'react';
 import { DatePickerDialog } from '@/components/date-dialog';
 import DirDialog from '@/components/diractioin';
 import LocationFinder from '@/components/flying';
+import Link from 'next/link';
 
 export default function Page() {
   const [openDat, setOpenDate] = useState(false)
@@ -116,11 +117,13 @@ export default function Page() {
           </div>
 
           {/* Search Bar */}
+          <Link href="/travels">
           <Button
               variant="secondary"
               className="h-12 text-right justify-between w-full">
               بحث
             </Button>
+            </Link>
         </div>
       </main>
 

@@ -18,7 +18,6 @@ export default function RootLayout({
       <body className=" " style={{ zoom: 0.7 }}>
         <main className=''>
           {children}
-        </main>
         {/* Bottom Navigation */}
         <nav className="fixed bottom-0 left-0 right-0 bg-[#001838] text-white p-4">
           <div className="flex justify-between items-center max-w-md mx-auto">
@@ -30,13 +29,13 @@ export default function RootLayout({
             </button>
             </Link>
 
-            <Link href={'/travels'}>
+            <Link href={'/offres'}>
               <button className="flex flex-col items-center gap-1">
                 <Briefcase className="w-6 h-6" />
                 <span className="text-xs">حجوزاتي</span>
               </button>
             </Link>
-            <Link href="/offres">
+            <Link href="/travels">
               <button className="flex flex-col items-center gap-1">
                 <Tag className="w-6 h-6" />
                 <span className="text-xs">العروض</span>
@@ -51,7 +50,9 @@ export default function RootLayout({
             </Link>
           </div>
 
-        </nav></body>
+        </nav>
+        </main>
+        </body>
     </html>
   );
 }
