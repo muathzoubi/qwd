@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { Check } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { useBooking } from './contexts/booking-context'
-
+import { getCrbyCode } from '@/app/actions/get-carancy'
 interface CabinType {
   id: string
   name: string

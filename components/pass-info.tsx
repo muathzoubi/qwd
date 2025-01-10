@@ -8,7 +8,6 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Calendar, Ship } from 'lucide-react'
 import { useBooking } from './contexts/booking-context'
-import { cruiseData3 } from '@/app/all'
 import { getCrbyCode } from '@/app/actions/get-carancy'
 
 export  function PassengerForm({onComplete}:any) {
