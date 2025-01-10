@@ -10,7 +10,7 @@ import { Label } from "@/components/ui/label"
 import { Card } from "@/components/ui/card"
 import { CabinSelection } from '@/components/select-cabin'
 import { PassengerForm } from '@/components/pass-info'
-import PaymentForm from '@/components/payment'
+import {PaymentForm} from '@/components/payment'
 import { BookingFlow } from '@/components/bokking-flow'
 import { BookingProvider } from '@/components/contexts/booking-context'
 export interface Guest {

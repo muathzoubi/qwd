@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { Clock, Loader2 } from 'lucide-react'
 import { Progress } from "@/components/ui/progress"
 
-export default function WaitingPage() {
+export function WaitingPage() {
   const [progress, setProgress] = useState(0)
 
   useEffect(() => {

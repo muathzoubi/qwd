@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { CabinSelection } from './select-cabin'
 import { PassengerForm } from './pass-info'
 import { WaitingPage } from './waiting-page'
-import PaymentForm from './payment'
+import {PaymentForm} from './payment'
 import { GeustForm } from './gest-info'
 
 enum BookingStep {
@@ -27,9 +27,9 @@ export  function BookingFlow() {
       case BookingStep.PassengerInfo:
         return <PassengerForm onComplete={() => setCurrentStep(BookingStep.Payment)} />
       case BookingStep.Payment:
-        return <PaymentForm onComplete={() => setCurrentStep(BookingStep.Confirmation)} />
+        return <PaymentForm onSubmit={()=>{}} onComplete={() => setCurrentStep(BookingStep.Confirmation)} />
       case BookingStep.Confirmation:
-        return <div> <WaitingPage /></div>
+        return <div> <WaitingPage  /></div>
       default:
         return null
     }
